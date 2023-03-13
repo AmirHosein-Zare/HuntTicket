@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from mail import send
 
 # set browser
 driver = webdriver.Chrome()
@@ -13,6 +14,6 @@ for i in range(100000000000000000):
     # check amount
     for element in elements:
         if element.text > 0:
-
+            send()
             print('buy')
             break

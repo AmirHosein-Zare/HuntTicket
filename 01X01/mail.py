@@ -1,9 +1,20 @@
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-
-# set browser
-driver = webdriver.Chrome()
-driver.maximize_window()
-# get url
-driver.get("https://mail.google.com/mail/u/0/#inbox")
-
+import smtplib
+ 
+def send():
+    # creates SMTP session
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+ 
+    # start TLS for security
+    s.starttls()
+    
+    # Authentication
+    s.login("sender_email_id", "sender_email_id_password")
+    
+    # message to be sent
+    message = "Message_you_need_to_send"
+    
+    # sending the mail
+    s.sendmail("sender_email_id", "receiver_email_id", message)
+    
+    # terminating the session
+    s.quit()
