@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-import time
+from email import PyEmailer
 
 # set browser
 driver = webdriver.Chrome()
