@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
+from mail import alarm
 import time
 
 # set browser
@@ -18,7 +19,7 @@ while(flag):
         # check amount
         for element in elements:
             if int(element.text) > 0:
-
+                alarm()
                 print('buy')
                 flag = False
         try:
