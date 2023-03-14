@@ -23,6 +23,7 @@ while(flag):
                 print('buy')
                 flag = False
         try:
+            # scroll down to check another ticket
             window.send_keys(Keys.PAGE_DOWN)
         except:
             i -= 1
