@@ -1,20 +1,17 @@
-import smtplib
- 
-def send():
-    # creates SMTP session
-    s = smtplib.SMTP('smtp.gmail.com', 587)
- 
-    # start TLS for security
-    s.starttls()
-    
-    # Authentication
-    s.login("sender_email_id", "sender_email_id_password")
-    
-    # message to be sent
-    message = "Message_you_need_to_send"
-    
-    # sending the mail
-    s.sendmail("sender_email_id", "receiver_email_id", message)
-    
-    # terminating the session
-    s.quit()
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
+import time
+
+# set browser
+driver = webdriver.Edge()
+driver.maximize_window()  
+# get url
+driver.get("https://safar724.com/bus/tehran-shiraz?date=1401/12/25")
+
+window = driver.find_element(By.CSS_SELECTOR, "body")
+window.send_keys(Keys.PAGE_DOWN)
+time.sleep(1)
+window.send_keys(Keys.PAGE_DOWN)
+time.sleep(1)
+window.send_keys(Keys.PAGE_DOWN)
