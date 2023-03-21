@@ -9,7 +9,7 @@ import time
 driver = webdriver.Chrome()
 driver.maximize_window()  
 # get url
-driver.get("https://safar724.com/bus/shiraz-bushehr?date=1402-01-02")
+driver.get("https://safar724.com/bus/shiraz-bushehr?date=1402-01-03")
 
 flag = True
 while(flag):
@@ -17,15 +17,21 @@ while(flag):
     for i in range(3):
         # get elements
         elements = driver.find_elements(By.CSS_SELECTOR, '.available-seat>span')
-        btns = driver.find_elements(By.CSS_SELECTOR, '.viewseatbtn');
+        btns = driver.find_elements(By.CSS_SELECTOR, '.viewseatbtn')
         # check amount
         j=0
         for element in elements:
             if int(element.text) > 0:
-                print('buy')
+                print('buy--------------------')
                 btns[j].click()
-                choose(driver=driver, By=By)
+                time.sleep(5)
+                seat = driver.find_element(By.CSS_SELECTOR, '#currentSeat>div>div>a')
+                seat.click()
+                time.sleep(5)
+                choose(driver, By)
+                time.sleep(5)
                 flag = False
+                break
         try:
             # scroll down to check another ticket
             window.send_keys(Keys.PAGE_DOWN)
@@ -33,5 +39,8 @@ while(flag):
             i -= 1
             pass
         j += 1
+        if flag == False:
+            break
     # refresh the page
-    driver.refresh()
+    if flag:
+        driver.refresh()
