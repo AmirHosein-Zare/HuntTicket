@@ -5,7 +5,7 @@ user_family = "your-family"
 user_mobile = "your-mobile"
 user_code = "your-code"
 
-def input(driver, By):
+def insert(driver, By):
     mobile = driver.find_element(By.NAME, 'rMobile')
     code = driver.find_element(By.NAME, 'rcode')
     name = driver.find_element(By.NAME, 'rName')
