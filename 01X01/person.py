@@ -1,9 +1,9 @@
 import time
 
-user_name = "امیرحسین"
-user_family = "زارع"
-user_mobile = "09172535548"
-user_code = "2520185740"
+user_name = "your-name"
+user_family = "your-family"
+user_mobile = "your-mobile"
+user_code = "your-code"
 
 def input(driver, By):
     mobile = driver.find_element(By.NAME, 'rMobile')
