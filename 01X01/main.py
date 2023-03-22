@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 from mail import alarm
 from chair import choose
+from person import insert
 import time
 
 # set browser
@@ -23,13 +24,15 @@ while(flag):
         for element in elements:
             if int(element.text) > 0:
                 print('buy--------------------')
+                alarm()
                 btns[j].click()
-                time.sleep(5)
+                time.sleep(2)
                 seat = driver.find_element(By.CSS_SELECTOR, '#currentSeat>div>div>a')
                 seat.click()
-                time.sleep(5)
+                time.sleep(2)
                 choose(driver, By)
-                time.sleep(5)
+                time.sleep(2)
+                insert
                 flag = False
                 break
         try:
