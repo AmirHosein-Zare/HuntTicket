@@ -24,15 +24,21 @@ while(flag):
         for element in elements:
             if int(element.text) > 0:
                 print('buy--------------------')
+                # Alarm to buy ticket
                 alarm()
+                # click on bus btn that have seat
                 btns[j].click()
                 time.sleep(2)
+                # click on btn to choose seat
                 seat = driver.find_element(By.CSS_SELECTOR, '#currentSeat>div>div>a')
                 seat.click()
                 time.sleep(2)
+                # choose seat and then click to next page 
+                # use chair madule
                 choose(driver, By)
                 time.sleep(2)
-                insert
+                # insert personal data
+                insert()
                 flag = False
                 break
         try:
