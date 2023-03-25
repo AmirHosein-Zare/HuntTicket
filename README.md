@@ -7,3 +7,5 @@ Sends an email
 for use this bot you should install selenium with pip
 `pip install selenium`
 and then start bot
+
+in person.py module replace your information
